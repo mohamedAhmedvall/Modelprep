@@ -20,6 +20,7 @@ ratings **Elo**, modèle statistique **Dixon-Coles** (Poisson bivarié) et
 | **Dixon-Coles** (`src/models/poisson_dixon_coles.py`) | Modèle de buts → **matrice complète des probabilités de score**. Régression de Poisson pondérée dans le temps + correction `rho` pour les petits scores. |
 | **XGBoost** (`src/models/xgb_goals.py`) | Estimation ML des buts attendus à partir des features. Mélangé avec Dixon-Coles. |
 | **Backtest** (`src/backtest.py`) | Validation *walk-forward* : on n'entraîne que sur le passé de chaque CDM. |
+| **Value betting** (`src/value.py`) | Compare les probabilités du modèle aux cotes du bookmaker, repère les paris à valeur (edge > 0) et calcule la mise de Kelly fractionnée. C'est le vrai levier vers un ROI positif. |
 
 Les buts attendus des deux modèles sont **mélangés** (`DC_BLEND_WEIGHT` dans
 `src/config.py`), puis transformés en matrice de scores d'où l'on dérive tous
@@ -64,8 +65,17 @@ python -m src.predict France Croatia --not-neutral
 |---|---|
 | `GET /api/teams` | Liste des équipes connues. |
 | `GET /api/predict?home=France&away=Brazil&neutral=true` | Prédiction complète. |
+| `POST /api/value` | Value betting : envoie `{home, away, neutral, odds:{...}, bankroll}` → edges + mises Kelly. |
 | `GET /api/report` | Dernier rapport de backtest (JSON). |
 | `GET /` | Interface web. |
+
+### Aperçu hors-ligne (partage mobile)
+
+```bash
+python -m scripts.build_preview   # génère preview.html (autonome, sans serveur)
+```
+Le fichier `preview.html` embarque de vraies prédictions pré-calculées et
+s'ouvre dans n'importe quel navigateur (idéal pour une démo sur téléphone).
 
 ## 📈 Résultats du backtest
 

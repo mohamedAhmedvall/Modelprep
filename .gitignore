@@ -17,3 +17,6 @@ data/processed/*
 # Artefacts de modèle entraîné (régénérables via `python -m src.train`)
 artifacts/*.pkl
 artifacts/*.joblib
+
+# Aperçu statique généré (régénérable via `python -m scripts.build_preview`)
+preview.html

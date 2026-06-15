@@ -64,3 +64,10 @@ h4 { margin: 8px 0 4px; font-size: .9rem; color: var(--muted); }
 .disclaimer { color: var(--muted); font-size: .8rem; text-align: center;
   line-height: 1.5; margin-top: 8px; }
 .warn { color: #f1c40f; font-size: .85rem; margin-top: 12px; }
+.odds-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;
+  margin: 12px 0; }
+.odds-grid label { display: flex; flex-direction: column; gap: 4px;
+  font-size: .75rem; color: var(--muted); }
+.odds-grid input { background: #0d1119; border: 1px solid #2a3346;
+  color: var(--text); border-radius: 8px; padding: 8px; font-size: .95rem; }
+@media (max-width: 520px) { .odds-grid { grid-template-columns: repeat(2, 1fr); } }
