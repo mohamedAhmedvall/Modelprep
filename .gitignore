@@ -1,0 +1,19 @@
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+env/
+.DS_Store
+.idea/
+.vscode/
+
+# Données brutes / traitées (régénérables via `python -m src.data.ingest`)
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# Artefacts de modèle entraîné (régénérables via `python -m src.train`)
+artifacts/*.pkl
+artifacts/*.joblib

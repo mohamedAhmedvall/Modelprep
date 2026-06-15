@@ -1,0 +1,59 @@
+{
+  "exact_acc": 0.1194,
+  "result_acc": 0.556,
+  "logloss": 0.9796,
+  "brier": 0.5796,
+  "roi_exact": -0.1045,
+  "n": 268,
+  "per_year": {
+    "2010": {
+      "exact_acc": 0.1875,
+      "result_acc": 0.5625,
+      "logloss": 0.9568,
+      "brier": 0.5678,
+      "roi_exact": 0.4062,
+      "n": 64
+    },
+    "2014": {
+      "exact_acc": 0.0625,
+      "result_acc": 0.5781,
+      "logloss": 0.9487,
+      "brier": 0.5635,
+      "roi_exact": -0.5312,
+      "n": 64
+    },
+    "2018": {
+      "exact_acc": 0.1094,
+      "result_acc": 0.5312,
+      "logloss": 0.9619,
+      "brier": 0.5688,
+      "roi_exact": -0.1797,
+      "n": 64
+    },
+    "2022": {
+      "exact_acc": 0.1094,
+      "result_acc": 0.5781,
+      "logloss": 1.0369,
+      "brier": 0.6046,
+      "roi_exact": -0.1797,
+      "n": 64
+    },
+    "2026": {
+      "exact_acc": 0.1667,
+      "result_acc": 0.4167,
+      "logloss": 1.0541,
+      "brier": 0.6531,
+      "roi_exact": 0.25,
+      "n": 12
+    }
+  },
+  "assumed_exact_odds": 7.5,
+  "n_matches": 268,
+  "years": [
+    2010,
+    2014,
+    2018,
+    2022,
+    2026
+  ]
+}

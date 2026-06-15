@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ModelPrep — Prédiction de score (Coupe du Monde)</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <header>
+    <h1>⚽ ModelPrep</h1>
+    <p class="subtitle">Prédiction de score exact — Coupe du Monde · Dixon-Coles + ML</p>
+  </header>
+
+  <main>
+    <section class="card form">
+      <div class="row">
+        <label>Équipe domicile
+          <input list="teamlist" id="home" placeholder="Ex : France" />
+        </label>
+        <span class="vs">VS</span>
+        <label>Équipe extérieur
+          <input list="teamlist" id="away" placeholder="Ex : Brazil" />
+        </label>
+      </div>
+      <datalist id="teamlist"></datalist>
+      <label class="neutral">
+        <input type="checkbox" id="neutral" checked />
+        Terrain neutre (typique en Coupe du Monde)
+      </label>
+      <button id="go">Prédire</button>
+      <p id="status" class="status"></p>
+    </section>
+
+    <section id="results" class="card hidden">
+      <div class="headline">
+        <div class="score-box">
+          <span class="label">Score le plus probable</span>
+          <span id="bigscore" class="bigscore">—</span>
+          <span id="bigprob" class="bigprob"></span>
+        </div>
+        <div class="xg">
+          <span id="xg" class="muted"></span>
+        </div>
+      </div>
+
+      <h3>Top 5 des scores probables</h3>
+      <table id="topscores"></table>
+
+      <h3>Résultat (1X2)</h3>
+      <div id="bars1x2" class="bars"></div>
+
+      <div class="markets">
+        <div>
+          <h4>Plus / Moins 2.5 buts</h4>
+          <div id="ou" class="bars small"></div>
+        </div>
+        <div>
+          <h4>Les deux équipes marquent</h4>
+          <div id="btts" class="bars small"></div>
+        </div>
+      </div>
+      <p id="warn" class="warn hidden"></p>
+    </section>
+
+    <p class="disclaimer">
+      ⚠️ Le score exact est intrinsèquement difficile à prédire (~12–18 % au mieux).
+      Ces probabilités sont calibrées sur l'historique mais ne garantissent aucun gain.
+      Pariez de façon responsable.
+    </p>
+  </main>
+
+  <script src="/app.js"></script>
+</body>
+</html>
